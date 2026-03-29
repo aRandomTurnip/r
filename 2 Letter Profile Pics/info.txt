@@ -1,0 +1,15 @@
+These are some profile pics I made with the following program:
+from PIL import Image, ImageDraw, ImageFont
+import os
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+for i in alpha:
+ for j in alpha:
+  text = i + j
+  os.remove(text.lower() + ".png")
+  img = Image.new("RGBA", (100, 100), (255, 255, 255, 255))
+  font = ImageFont.truetype("C:\\Users\\micha\\Downloads\\ARIAL.TTF", 65)
+  draw = ImageDraw.Draw(img)
+  draw.text((0, 15), text, font=font, fill=(0, 0, 0, 255))
+  img.save("2 letter pfps\\" + text.lower() + ".png")
+  print(f"Saved as {text.lower() + ".png"}")
